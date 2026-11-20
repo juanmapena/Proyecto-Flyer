@@ -97,3 +97,8 @@ a { color: inherit; }
   .card { padding: 34px 32px; }
 }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .swash path { stroke-dashoffset: 0; } }
+
+/* botón "Ver sitio": oscuro para que resalte sobre los chips rojos */
+.info .btn { background: #1E1411; color: #fff; padding: 8px 8px 8px 24px; gap: 14px; box-shadow: 0 14px 24px -14px rgba(30,20,17,.75); }
+.info .btn span { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--orange); color: #1E1411; font-size: 18px; transition: transform .2s; }
+@media (hover: hover) { .info .btn:hover { background: #000; } .info .btn:hover span { transform: rotate(45deg); } }
