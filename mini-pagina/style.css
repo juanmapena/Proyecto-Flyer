@@ -51,10 +51,6 @@ a { color: inherit; }
 .num { font: 800 15px/1.2 'Cond'; text-transform: uppercase; color: var(--orange); }
 .info h2 { font-size: clamp(40px, 11vw, 64px); margin: 8px 0 12px; }
 .info p:not(.num) { color: var(--muted); max-width: 30em; margin: 0 auto; }
-.chips { list-style: none; padding: 0; margin: 16px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-.chips li { font: 800 14px/1 'Cond'; text-transform: uppercase; padding: 10px 14px; border-radius: 999px; background: var(--red); color: var(--cream); }
-.chips li.o { background: var(--orange); }
-.chips li.l { background: transparent; color: var(--red); box-shadow: inset 0 0 0 2.5px var(--red); }
 
 /* servicios */
 .services { text-align: center; padding: 50px var(--pad); max-width: 1000px; margin: 0 auto; }
@@ -92,13 +88,11 @@ a { color: inherit; }
   .project:nth-child(even) .shots { order: 2; }
   .info { text-align: left; }
   .info p:not(.num) { margin: 0; }
-  .chips { justify-content: flex-start; }
-  .svc { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .svc { grid-template-columns: 1fr 1fr; gap: 24px; }
   .card { padding: 34px 32px; }
 }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .swash path { stroke-dashoffset: 0; } }
 
-/* botón "Ver sitio": oscuro para que resalte sobre los chips rojos */
-.info .btn { background: #1E1411; color: #fff; padding: 8px 8px 8px 24px; gap: 14px; box-shadow: 0 14px 24px -14px rgba(30,20,17,.75); }
-.info .btn span { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--orange); color: #1E1411; font-size: 18px; transition: transform .2s; }
-@media (hover: hover) { .info .btn:hover { background: #000; } .info .btn:hover span { transform: rotate(45deg); } }
+/* botón "Ver sitio": oscuro para que resalte */
+.info .btn { background: #1E1411; color: #fff; margin-top: 18px; box-shadow: 0 14px 24px -14px rgba(30,20,17,.75); }
+@media (hover: hover) { .info .btn:hover { background: #000; } }
