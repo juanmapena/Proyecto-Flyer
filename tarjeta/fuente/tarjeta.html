@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family: 'Brush'; src: url(../../mini-pagina/fonts/Mansalva-400.woff2); }
+  @font-face { font-family: 'Cond'; font-weight: 700; src: url(../../mini-pagina/fonts/BarlowCondensed-700.woff2); }
+  @font-face { font-family: 'Cond'; font-weight: 800; src: url(../../mini-pagina/fonts/BarlowCondensed-800.woff2); }
+  @font-face { font-family: 'Barlow'; font-weight: 400; src: url(../../mini-pagina/fonts/b400.woff2); }
+  @font-face { font-family: 'Barlow'; font-weight: 500; src: url(../../mini-pagina/fonts/b500.woff2); }
+  /* 1rem = 1% del ancho de la tarjeta (9 cm) */
+  :root { --cream: #F1E9D8; --red: #C9342A; --red-d: #9E241C; --orange: #EE7A2E; --ink: #3A2620; --muted: #6a5248; --paper: var(--cream); --back: var(--red); --back-ink: var(--cream); --back-acc: #FFC9A0; }
+  .bn { --cream: #fff; --red: #111; --red-d: #000; --orange: #111; --ink: #111; --muted: #333; --paper: #fff; --back: #111; --back-ink: #fff; --back-acc: #fff; }
+  * { box-sizing: border-box; margin: 0; }
+  [hidden] { display: none !important; }
+  html, body { width: var(--W); height: var(--H); overflow: hidden; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Barlow'; position: relative; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .brush { font-family: 'Brush'; text-transform: uppercase; transform: skewX(-9deg); -webkit-text-stroke: .08rem currentColor; line-height: .95; }
+
+  /* frente */
+  .front { position: absolute; inset: 0; }
+  .left { position: absolute; left: 6rem; top: 5.2rem; width: 54rem; }
+  .kicker { font: 800 3.5rem/1 'Cond'; text-transform: uppercase; color: var(--orange); }
+  .h { color: var(--red); font-size: 5.7rem; margin-top: 0; line-height: .98; }
+  .steps { list-style: none; padding: 0; margin-top: 4.4rem; display: grid; gap: 1.6rem; }
+  .steps li { display: flex; align-items: flex-start; gap: 1.6rem; font: 400 2.65rem/1.22 'Barlow'; color: var(--muted); }
+  .steps b { font-weight: 500; color: var(--ink); }
+  .steps span { flex: none; display: grid; place-items: center; width: 3.9rem; height: 3.9rem; border-radius: 50%; background: var(--red); color: var(--paper); font: 800 2.5rem/1 'Cond'; margin-top: -.2rem; }
+  .sub { font: 400 2.75rem/1.3 'Barlow'; color: var(--muted); margin-top: 2.2rem; }
+  .sub b { font-weight: 500; color: var(--ink); }
+  .contact { position: absolute; left: 6rem; bottom: 4.2rem; display: flex; flex-direction: column; align-items: center; }
+  .contact .name { font: 700 2.3rem/1 'Cond'; text-transform: uppercase; color: var(--ink); margin-top: 1.3rem; }
+  .wa { display: inline-flex; align-items: center; gap: 1.2rem; padding: 1.3rem 2.8rem 1.3rem 2rem; border-radius: 99rem; background: var(--red); color: var(--cream); font: 800 3.8rem/1 'Cond'; }
+  .wa svg { width: 3.8rem; height: 3.8rem; fill: currentColor; }
+  .bn .wa { background: #fff; color: #000; box-shadow: inset 0 0 0 .5rem #000; }
+  .right { position: absolute; right: 6rem; top: 7.6rem; width: 30rem; text-align: center; }
+  .qrcard { background: #fff; border: .9rem solid var(--red); border-radius: 3rem; padding: 1.6rem; }
+  .qrcard svg { display: block; width: 100%; height: auto; }
+  .scan { color: var(--orange); font-size: 3.2rem; margin-top: 1.8rem; display: inline-block; transform: rotate(-4deg) skewX(-9deg); }
+  .tag { position: absolute; left: -4.6rem; top: -2.8rem; transform: rotate(-9deg); background: var(--paper); border: .6rem solid var(--red); border-radius: 99rem; padding: .8rem 1.8rem; font: 800 2.3rem/1 'Cond'; text-transform: uppercase; color: var(--red); white-space: nowrap; }
+  .tag i { font-style: normal; color: var(--orange); }
+
+  /* dorso */
+  .back { position: absolute; inset: 0; background: var(--back); color: var(--back-ink); display: grid; place-content: center; text-align: center; }
+  .back .h2 { font-size: 10rem; color: var(--back-ink); }
+  .back .swash { display: block; width: 40rem; height: 2.6rem; margin: 2.4rem auto 0; overflow: visible; }
+  .back .swash path { fill: none; stroke: var(--back-acc); stroke-width: 7; stroke-linecap: round; }
+  .back .name { font: 800 4.4rem/1 'Cond'; text-transform: uppercase; margin-top: 3.6rem; }
+  .back .url { font: 500 2.8rem/1 'Barlow'; margin-top: 1.6rem; opacity: .85; }
+  .spark { position: absolute; color: var(--back-acc); }
+  .spark svg { width: 100%; height: 100%; fill: currentColor; }
+</style>
+</head>
+<body>
+<section class="front" id="front">
+  <div class="left">
+    <h1 class="brush h">¿Querés hacer<br>crecer tu<br>negocio?</h1>
+    <ol class="steps"><li><span>1</span><p><b>Escaneá el QR</b> y mirá webs que armé.</p></li><li><span>2</span><p><b>Escribime</b> y armamos tu web o automatización.</p></li></ol>
+  </div>
+  <div class="contact">
+  <p class="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg>11 5052-7336</p>
+    <p class="name">Juan Manuel Pena</p>
+  </div>
+  <div class="right">
+    <span class="tag">Promo <i>Black Friday</i></span>
+    <div class="qrcard" id="qr"></div>
+    <p class="brush scan">¡Escaneame!</p>
+  </div>
+</section>
+<section class="back" id="back" hidden>
+  <span class="spark" style="left:8rem;top:8rem;width:5rem;height:5rem"><svg viewBox="0 0 24 24"><path d="M12 0c.6 6 1.8 9.4 12 12-10.2 2.6-11.4 6-12 12-.6-6-1.8-9.4-12-12C10.2 9.4 11.4 6 12 0Z"/></svg></span>
+  <span class="spark" style="right:9rem;bottom:9rem;width:3.6rem;height:3.6rem"><svg viewBox="0 0 24 24"><path d="M12 0c.6 6 1.8 9.4 12 12-10.2 2.6-11.4 6-12 12-.6-6-1.8-9.4-12-12C10.2 9.4 11.4 6 12 0Z"/></svg></span>
+  <p class="brush h2">Tu web,<br>a tu medida</p>
+  <svg class="swash" viewBox="0 0 320 22"><path d="M3 15 C 70 6, 170 3, 317 9" /></svg>
+  <p class="name">Juan Manuel Pena · Webs &amp; automatizaciones</p>
+  <p class="url">pena-proyectos.netlify.app</p>
+</section>
+<script>
+  const q = new URLSearchParams(location.search);
+  const W = +(q.get('w') || 340), H = Math.round(W * 50 / 90);
+  const r = document.documentElement;
+  r.style.setProperty('--W', W + 'px'); r.style.setProperty('--H', H + 'px'); r.style.fontSize = (W / 100) + 'px';
+  if (q.get('bn')) r.classList.add('bn');
+  if (q.get('side') === 'back') { front.hidden = true; back.hidden = false; }
+  fetch(q.get("bn") ? "../../flyer/fuente/qr-bn.svg" : "../../flyer/fuente/qr.svg").then(x => x.text()).then(t => { qr.innerHTML = t; document.body.dataset.ok = 1; });
+</script>
+</body>
+</html>
